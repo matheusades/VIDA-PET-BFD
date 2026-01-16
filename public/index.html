@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benchmark MariaDB x MongoDB</title>
+
+  <style>
+   body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f0f2f5;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: clamp(22px, 4vw, 32px);
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 20px;
+}
+
+    .container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+    .maria { background: #003545; color: white; }
+    .mongo { background: #13aa52; color: white; }
+
+    pre {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Benchmark de Desempenho</h1>
+
+<div class="container">
+
+  <div class="card">
+    <h2>MariaDB</h2>
+    <button class="maria" onclick="rodarTeste('/mariadb/create', 'resultadoMaria')">
+      Escrita (20x)
+    </button>
+    <button class="maria" onclick="rodarTeste('/mariadb/read', 'resultadoMaria')">
+      Leitura (20x)
+    </button>
+    <pre id="resultadoMaria"></pre>
+  </div>
+
+  <div class="card">
+    <h2>MongoDB</h2>
+    <button class="mongo" onclick="rodarTeste('/mongodb/create', 'resultadoMongo')">
+      Escrita (20x)
+    </button>
+    <button class="mongo" onclick="rodarTeste('/mongodb/read', 'resultadoMongo')">
+      Leitura (20x)
+    </button>
+    <pre id="resultadoMongo"></pre>
+  </div>
+
+</div>
+
+<footer>
+  Projeto comparativo MariaDB x MongoDB – Node.js
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
