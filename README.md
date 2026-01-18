@@ -117,8 +117,8 @@ HTML + JavaScript (frontend de testes)
 
 ⚙️ Configuração do Ambiente
 1️⃣ Clonar o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/matheusades/VIDA-PET-BFD.git
+cd VIDA-PET-BFD
 
 2️⃣ Instalar dependências
 npm install
